@@ -1,1 +1,75 @@
 
+\documentclass[onecolumn]{article}
+%\usepackage{url}
+%\usepackage{algorithmic}
+\usepackage[a4paper]{geometry}
+\usepackage{datetime}
+\usepackage[margin=2em, font=small,labelfont=it]{caption}
+\usepackage{graphicx}
+\usepackage{mathpazo} % use palatino
+\usepackage[scaled]{helvet} % helvetica
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{subfigure}
+% Letterspacing macros
+\newcommand{\spacecaps}[1]{\textls[200]{\MakeUppercase{#1}}}
+\newcommand{\spacesc}[1]{\textls[50]{\textsc{\MakeLowercase{#1}}}}
+
+\title{\spacecaps{Assignment Report 1: Process and Thread Implementation}\\ \normalsize \spacesc{CENG2034, Operating Systems} }
+
+\author{Murat Doğan\\muratdogan5@posta.mu.edu.tr}
+%\date{\today\\\currenttime}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+\section{Introduction}
+This assignment which the given us, we see how to understand process and thread implementation.
+
+\section{Assignments}
+In this section, i will show what i do in this assignment with articles.
+
+\subsection{ Print PID of itself. }
+
+Using the os library, i use getpid() function to get pid.
+    \newline
+    \includegraphics[width=\textwidth]{fig/assignment1.PNG}
+\subsection{ If the running OS is linux; print loadavg.  }
+
+Using the os library again, i used getloadavg() function to get load average if my operating system is linux
+    \newline
+    \includegraphics[width=\textwidth]{fig/assignment2.PNG}
+
+\subsection{  Take and print “5 min loadavg” value and cpu core count. If the loadavg value is near (or close) to the cpu core count (hint: nproc - 5min loadavg < 1) then exit script.  }
+cpu\_count give us the cpu core count. i put getloadavg data in a list and second element of array give us 5 min loadavg. there is a if statement included if cpu core count minus 5 min loadavg less than one exit the script. otherwise, print the message.
+    \newline
+    \includegraphics[width=\textwidth]{fig/assignment3.PNG}
+
+\subsection{ Check if the links in these urls are valid (working) or not. (Hint: You can use python requests lib. HTTP response status code 2xx is successful. 4xx or 5xx means failed.) *Implement this with threads }
+
+i create a function called by check. it checks a link is valid or not and it works by threads
+    \newline
+    \includegraphics[width=\textwidth]{fig/assignment4.PNG}
+
+
+
+
+\section{Results}
+in result, this script gives us, getting pit, loadavg and a link is valid or not.
+
+
+
+
+
+\section{Conclusion}
+in conclusion i used os, threading, requests library in python.
+
+\section{GitHub}
+github.com/dognmrt/ceng\_2034\_2020\_midterm
+
+\end{document}
+
